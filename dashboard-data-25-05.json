@@ -1,0 +1,332 @@
+{
+	"byMonth": [
+		{
+			"monthofyear": "2019-10",
+			"total": 4258943
+		},
+		{
+			"monthofyear": "2018-10",
+			"total": 1438430
+		},
+		{
+			"monthofyear": "2020-02",
+			"total": 8297627
+		},
+		{
+			"monthofyear": "2017-09",
+			"total": 635923
+		},
+		{
+			"monthofyear": "2019-11",
+			"total": 3418556
+		},
+		{
+			"monthofyear": "2017-10",
+			"total": 500515
+		},
+		{
+			"monthofyear": "2016-02",
+			"total": 61969
+		},
+		{
+			"monthofyear": "2017-05",
+			"total": 257604
+		},
+		{
+			"monthofyear": "2018-06",
+			"total": 783435
+		},
+		{
+			"monthofyear": "2019-03",
+			"total": 3137704
+		},
+		{
+			"monthofyear": "2017-11",
+			"total": 424838
+		},
+		{
+			"monthofyear": "2018-03",
+			"total": 791722
+		},
+		{
+			"monthofyear": "2020-05",
+			"total": 412584
+		},
+		{
+			"monthofyear": "2017-03",
+			"total": 190888
+		},
+		{
+			"monthofyear": "2018-02",
+			"total": 857070
+		},
+		{
+			"monthofyear": "2016-12",
+			"total": 137374
+		},
+		{
+			"monthofyear": "2016-09",
+			"total": 121202
+		},
+		{
+			"monthofyear": "2017-08",
+			"total": 224216
+		},
+		{
+			"monthofyear": "2016-03",
+			"total": 40953
+		},
+		{
+			"monthofyear": "2019-07",
+			"total": 3421224
+		},
+		{
+			"monthofyear": "2017-06",
+			"total": 197688
+		},
+		{
+			"monthofyear": "2016-10",
+			"total": 94313
+		},
+		{
+			"monthofyear": "2017-02",
+			"total": 212298
+		},
+		{
+			"monthofyear": "2017-04",
+			"total": 164955
+		},
+		{
+			"monthofyear": "2018-05",
+			"total": 986003
+		},
+		{
+			"monthofyear": "2018-08",
+			"total": 741342
+		},
+		{
+			"monthofyear": "2017-07",
+			"total": 324335
+		},
+		{
+			"monthofyear": "2019-05",
+			"total": 5884257
+		},
+		{
+			"monthofyear": "2019-08",
+			"total": 2799505
+		},
+		{
+			"monthofyear": "2016-05",
+			"total": 103499
+		},
+		{
+			"monthofyear": "2019-01",
+			"total": 5884000
+		},
+		{
+			"monthofyear": "2019-09",
+			"total": 6822904
+		},
+		{
+			"monthofyear": "2016-04",
+			"total": 38786
+		},
+		{
+			"monthofyear": "2020-03",
+			"total": 3484008
+		},
+		{
+			"monthofyear": "2017-12",
+			"total": 537994
+		},
+		{
+			"monthofyear": "2018-11",
+			"total": 1302580
+		},
+		{
+			"monthofyear": "2016-11",
+			"total": 116987
+		},
+		{
+			"monthofyear": "2020-01",
+			"total": 10606507
+		},
+		{
+			"monthofyear": "2019-06",
+			"total": 3353082
+		},
+		{
+			"monthofyear": "2019-04",
+			"total": 3289363
+		},
+		{
+			"monthofyear": "2018-12",
+			"total": 1937518
+		},
+		{
+			"monthofyear": "2016-01",
+			"total": 92510
+		},
+		{
+			"monthofyear": "2016-07",
+			"total": 66433
+		},
+		{
+			"monthofyear": "2016-06",
+			"total": 64270
+		},
+		{
+			"monthofyear": "2019-12",
+			"total": 5424577
+		},
+		{
+			"monthofyear": "2018-04",
+			"total": 762442
+		},
+		{
+			"monthofyear": "2018-01",
+			"total": 1133323
+		},
+		{
+			"monthofyear": "2019-02",
+			"total": 4243255
+		},
+		{
+			"monthofyear": "2016-08",
+			"total": 60225
+		},
+		{
+			"monthofyear": "2020-04",
+			"total": 1790907
+		},
+		{
+			"monthofyear": "2017-01",
+			"total": 540759
+		},
+		{
+			"monthofyear": "2018-09",
+			"total": 1460042
+		},
+		{
+			"monthofyear": "2018-07",
+			"total": 1093565
+		}
+	],
+	"dEcbyAnno": [
+		{
+			"DenominazioneEC": "Automobile Club d'Italia",
+			"Anno": 2019,
+			"total": 27379209
+		},
+		{
+			"DenominazioneEC": "Automobile Club Italia",
+			"Anno": 2020,
+			"total": 11847716
+		},
+		{
+			"DenominazioneEC": "Agenzia delle Entrate - Riscossione",
+			"Anno": 2019,
+			"total": 4047944
+		},
+		{
+			"DenominazioneEC": "Agenzia delle entrate-Riscossione",
+			"Anno": 2020,
+			"total": 4032177
+		},
+		{
+			"DenominazioneEC": "Comune di Milano",
+			"Anno": 2019,
+			"total": 2095589
+		},
+		{
+			"DenominazioneEC": "ROMA CAPITALE",
+			"Anno": 2019,
+			"total": 1542866
+		},
+		{
+			"DenominazioneEC": "Regione del Veneto",
+			"Anno": 2019,
+			"total": 1396904
+		},
+		{
+			"DenominazioneEC": "Istituto Nazionale per l'Assicurazione contro gli Infortuni sul Lavoro - INAIL",
+			"Anno": 2019,
+			"total": 1280934
+		},
+		{
+			"DenominazioneEC": "Automobile Club d'Italia",
+			"Anno": 2020,
+			"total": 1040862
+		},
+		{
+			"DenominazioneEC": "Regione Veneto",
+			"Anno": 2020,
+			"total": 987236
+		}
+	],
+	"pspByAnno": [
+		{
+			"PSP": "SISAL GROUP S.P.A.",
+			"Anno": 2019,
+			"total": 17712495
+		},
+		{
+			"PSP": "Intesa Sanpaolo S.p.A",
+			"Anno": 2019,
+			"total": 8123313
+		},
+		{
+			"PSP": "SISALPAY S.P.A.",
+			"Anno": 2020,
+			"total": 6961334
+		},
+		{
+			"PSP": "Poste Italiane",
+			"Anno": 2019,
+			"total": 5744676
+		},
+		{
+			"PSP": "Poste Italiane",
+			"Anno": 2020,
+			"total": 4999142
+		},
+		{
+			"PSP": "AgID",
+			"Anno": 2019,
+			"total": 4866065
+		},
+		{
+			"PSP": "Banca 5 S.p.A.",
+			"Anno": 2019,
+			"total": 4016592
+		},
+		{
+			"PSP": "Intesa Sanpaolo S.p.A",
+			"Anno": 2020,
+			"total": 3337123
+		},
+		{
+			"PSP": "Paytipper S.p.A.",
+			"Anno": 2020,
+			"total": 2307886
+		},
+		{
+			"PSP": "LIS Istituto di Pagamento SPA",
+			"Anno": 2020,
+			"total": 2124329
+		}
+	],
+	"growthRate": 24.948405892632987,
+	"transactions2020": [
+		{
+			"total": 24566306,
+			"importo": 504181363713
+		}
+	],
+	"transactions2019": [
+		{
+			"total": 51937370
+		}
+	]
+}

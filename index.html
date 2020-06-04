@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstrap Italia CSS -->
+    <link rel="stylesheet" href="./assets/bootstrap-italia/css/bootstrap-italia.min.css">
+  <!-- <style>
+        .card { border: none; }
+     </style> -->
+    <title>pagoPa Dashboard</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row my-3">
+            <div class="col-md-4 py-1">
+                <div class="card" id="card-no-border">
+                    <div class="card-body text-center">
+                        <h4 style="color: rgb(0, 115, 230)">Totale transazioni</h4>
+                        <h4 id="totalt" style="color: rgb(0, 115, 230)">  # 101.499.471</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-1">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h4 style="color:rgb(0, 115, 230)">Importo totale</h4>
+                        <h4 id="totali" style="color:rgb(0, 115, 230)">€ 17.448.190.280</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-1">
+                <div class="card">
+                    <div class="card-body text-center">
+                            <h4 style="color:rgb(0, 115, 230)">Tasso di crescita  <svg class="bg-light icon icon-sm align-top"><use xlink:href="/assets/bootstrap-italia/svg/sprite.svg#it-info-circle"></use></svg>
+                            </h4>
+                        <h4 id="growthRate" style="color: rgb(0, 115, 230)"># </h4>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+      <div class="row my-3">
+        <div class="col-md-4 py-1">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 style="color:rgb(0, 115, 230)">Transazioni 2019</h4>
+                    <h4 id="2019t" style="color: rgb(0, 115, 230)"># 2154312</h4>
+                    <h4 id="2019e" style="color:rgb(0, 115, 230)">€ 8,341,588,984</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 py-1">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 style="color:rgb(0, 115, 230)">Transazioni 2020</h4>
+                    <h4 id="2020t" style="color: rgb(0, 115, 230)"># 2154312</h4>
+                    <h4 id="2020e" style="color:rgb(0, 115, 230)">€ 15431212121</h4>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 py-1">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 style="color:rgb(0, 115, 230)">Previsioni prossimi mesi</h4>
+                    <h4 style="color: rgb(0, 115, 230)"># </h4>
+                    <h4 style="color:rgb(0, 115, 230)">€ </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-1">
+        <div class="col-md-12 py-1">
+            <div class="card">
+                <h5 class="card-title text-center"># Transazioni andamento e previsioni</h5>
+                <p class="card-text text-center">Andamento storico del numero totale accumulato di transazioni e intervallo previsionale dei prossimi 6 mesi.</p>
+                <div class="card-body">
+                    <canvas id="totalPred"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="row my-1">
+        <div class="col-md-12 py-1">
+            <div class="card">
+                <h5 class="card-title text-center"># Transazioni 2019 vs 2020</h5>
+                <p class="card-text text-center"># Transazioni raggruppate per mese negl'anni 2019 e 2020</p>
+                <div class="card-body">
+                    <canvas id="byMonth"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col-md-6 py-1">
+            <div class="card">
+                <h5 class="card-title text-center"># Top 5 enti creditori</h5>
+                <div class="card-body">
+                    <canvas id="top10EdcPie"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 py-1">
+            <div class="card">
+                <h5 class="card-title text-center"># Top 5 enti PSP</h5>
+                <div class="card-body">
+                    <canvas id="top10PSPPie"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-1">
+        <div class="col-md-12 py-1">
+            <div class="card">
+                <h5 class="card-title text-center"># Top 5 enti creditori 2019 vs 2020</h5>
+                <div class="card-body">
+                    <canvas id="top10Edc"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-1">
+        <div class="col-md-12 py-1">
+            <div class="card">
+                <h5 class="card-title text-center"># Top 5 PSP 2019 vs 2020</h5>
+                <div class="card-body">
+                    <canvas id="top10PSP"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+   <script>window.__PUBLIC_PATH__ = './assets/bootstrap-italia/fonts'</script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+    <script src="./assets/bootstrap-italia/js/bootstrap-italia.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/unfetch/polyfill"></script>
+
+    <script type="text/javascript">
+      /*Global json path */
+      var dashboardDataUrl = "./dashboard-data.json";
+    </script> 
+    <!-- chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+    
+    <script src="./helpers.js"></script>
+    <script src="./dashboard.js"></script>
+
+  </body>
+</html>
