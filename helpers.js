@@ -14,21 +14,39 @@ String.prototype.toRGB = function () {
 };
 
 //
-var PSPBGCOLORS = ["rgb(77, 184, 255)", "rgb(230, 179, 255)","rgb(255, 255, 102","rgb(128, 255, 170)","rgb(223, 159, 223)"]
-var PSPBGCOLORS2019 = ["rgb(77, 184, 255, 0.2)", "rgb(230, 179, 255, 0.2)","rgb(255, 255, 102, 0.2)","rgb(128, 255, 170, 0.2)","rgb(223, 159, 223, 0.2)"]
+var PSPBGCOLORS = [
+  "rgb(77, 184, 255)",
+  "rgb(230, 179, 255)",
+  "rgb(255, 255, 102",
+  "rgb(128, 255, 170)",
+  "rgb(223, 159, 223)",
+];
+var PSPBGCOLORS2019 = [
+  "rgb(77, 184, 255, 0.2)",
+  "rgb(230, 179, 255, 0.2)",
+  "rgb(255, 255, 102, 0.2)",
+  "rgb(128, 255, 170, 0.2)",
+  "rgb(223, 159, 223, 0.2)",
+];
 
-var ECDBGCOLORS = ["rgb(77, 210, 255)", "rgb(179, 179, 230)", "rgb(255, 204, 128)","rgb(70, 210, 70)","rgb(77, 255, 255)"]
-var ECDBGCOLORS2019 = ["rgb(77, 210, 255, 0.2)", "rgb(179, 179, 230, 0.2)", "rgb(255, 204, 128, 0.2)","rgb(70, 210, 70, 0.2)","rgb(77, 255, 255, 0.2)"]
+var ECDBGCOLORS = [
+  "rgb(77, 210, 255)",
+  "rgb(179, 179, 230)",
+  "rgb(255, 204, 128)",
+  "rgb(70, 210, 70)",
+  "rgb(77, 255, 255)",
+];
+var ECDBGCOLORS2019 = [
+  "rgb(77, 210, 255, 0.2)",
+  "rgb(179, 179, 230, 0.2)",
+  "rgb(255, 204, 128, 0.2)",
+  "rgb(70, 210, 70, 0.2)",
+  "rgb(77, 255, 255, 0.2)",
+];
 
-var COLORS = [
-    "rgb(51, 102, 255, 0.2)",
-    "rgb(153, 51, 255, 0.2)",
-  ];
-  
-var BORDERCOLORS = [
-    "rgb(51, 102, 255)",
-    "rgb(153, 51, 255)",
-  ];
+var COLORS = ["rgb(51, 102, 255, 0.2)", "rgb(153, 51, 255, 0.2)"];
+
+var BORDERCOLORS = ["rgb(51, 102, 255)", "rgb(153, 51, 255)"];
 
 // @parameter array byMonth form dashboard-data.json
 // Prepare data for byMonth chart
@@ -88,11 +106,11 @@ function generateTop(topEdcs, key) {
     y2020.push(psp2020 ? psp2020.total : null);
   });
 
-  var colors = ECDBGCOLORS
-  var colors2019 = ECDBGCOLORS2019
-  if (key === "PSP"){
-      colors = PSPBGCOLORS
-      colors2019 = PSPBGCOLORS2019
+  var colors = ECDBGCOLORS;
+  var colors2019 = ECDBGCOLORS2019;
+  if (key === "PSP") {
+    colors = PSPBGCOLORS;
+    colors2019 = PSPBGCOLORS2019;
   }
 
   return {
@@ -108,7 +126,7 @@ function generateTop(topEdcs, key) {
       {
         label: "2020",
         backgroundColor: colors,
-    //    borderColor: borderColors[1],
+        //    borderColor: borderColors[1],
         data: y2020,
       },
     ],
@@ -138,9 +156,9 @@ function generateTopForPie(keysTotalsDates, key) {
     return keysTotal[item];
   });
 
-  var colors = ECDBGCOLORS
-  if (key === "PSP"){
-      colors = PSPBGCOLORS
+  var colors = ECDBGCOLORS;
+  if (key === "PSP") {
+    colors = PSPBGCOLORS;
   }
 
   return {
@@ -156,6 +174,70 @@ function generateTopForPie(keysTotalsDates, key) {
           "#A8B3C5",
           "#616774",
         ],
+      },
+    ],
+  };
+}
+
+function generatePredData(dashboardData) {
+  var labels = [];
+  var cumTotals = [];
+  var total = 0;
+  for (let i = 0; i < dashboardData.tsGroups.length; i++) {
+    var obj = dashboardData.tsGroups[i];
+    var monthDate = moment(obj.ds);
+    total = total + obj.y;
+    const date = monthDate.format("YYYY-MM");
+    labels.push(date.toString());
+    cumTotals.push(total);
+  }
+
+  var yUpperTotal = total;
+  var yLowerTotal = total;
+  var yUpperTotals = [];
+  var yLowerTotals = [];
+  for (let i = 0; i < dashboardData.tsGroups.length - 1; i++) {
+    yUpperTotals[i] = undefined;
+    yLowerTotals[i] = undefined;
+  }
+
+  for (let i = 0; i < dashboardData.forecastByMonth.length; i++) {
+    var forecastObj = dashboardData.forecastByMonth[i];
+    if (i !== 0) {
+      labels.push(moment(forecastObj.ds).format("YYYY-MM"));
+    }
+    yUpperTotal = yUpperTotal + Math.round(forecastObj.yhat_upper);
+    yLowerTotal = yLowerTotal + Math.round(forecastObj.yhat);
+    yUpperTotals.push(yUpperTotal);
+    yLowerTotals.push(yLowerTotal);
+  }
+
+  cumTotals[cumTotals.length - 1] = yUpperTotals[cumTotals.length - 1];
+  yLowerTotals[cumTotals.length - 1] = yUpperTotals[cumTotals.length - 1];
+
+  return {
+    labels,
+    datasets: [
+      {
+        label: "# Transazioni",
+        data: cumTotals,
+        borderWidth: 1,
+        backgroundColor: "rgb(0, 115, 230, 0.2)",
+        borderColor: "rgb(0, 115, 230)",
+      },
+      {
+        label: "# Ottimistiche",
+        data: yUpperTotals,
+        borderWidth: 1,
+        backgroundColor: "rgb(230, 255, 245, 0.2)",
+        borderColor: "rgb(77, 255, 184)",
+      },
+      {
+        label: "# Pessimistiche",
+        data: yLowerTotals,
+        borderWidth: 1,
+        backgroundColor: "rgb(230, 255, 245, 0.8)",
+        borderColor: "rgb(77, 255, 184)",
       },
     ],
   };
