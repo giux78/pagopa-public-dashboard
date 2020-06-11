@@ -97,10 +97,10 @@ function generateTop(topEdcs, key) {
   var y2020 = [];
   uniqueKeys.map(function (ec) {
     var psp2019 = topEdcs.find(function (obj) {
-      return obj[key] === ec && obj.Anno === 2019;
+      return obj[key] === ec && obj.Anno === "2019";
     });
     var psp2020 = topEdcs.find(function (obj) {
-      return obj[key] === ec && obj.Anno === 2020;
+      return obj[key] === ec && obj.Anno === "2020";
     });
     y2019.push(psp2019 ? psp2019.total : null);
     y2020.push(psp2020 ? psp2020.total : null);
